@@ -1,5 +1,4 @@
 import 'dart:collection';
-
 import 'package:bakeryshop/components/button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,6 +15,7 @@ class IntroPage extends StatelessWidget {
           padding: const EdgeInsets.all(45.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const SizedBox(height: 25),
 
@@ -52,7 +52,12 @@ class IntroPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               // button
-              MyButton(text: "Get Started"),
+              MyButton(
+                text: "Get Started",
+                onTap: () {
+                  Navigator.pushNamed(context, '/menupage');
+                },
+              ),
             ],
           ),
         ),
