@@ -9,11 +9,12 @@ class FoodTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(25),
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 237, 131, 211),
         borderRadius: BorderRadius.circular(20),
       ),
-      margin: EdgeInsets.only(left: 20),
+      margin: const EdgeInsets.only(right: 20),
       child: Column(
         children: [
           // image
@@ -34,16 +35,21 @@ class FoodTile extends StatelessWidget {
           SizedBox(
             width: 160,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   "\$${food.price}",
                   style: const TextStyle(fontSize: 18, color: Colors.white),
                 ),
-                Icon(Icons.star, color: Colors.yellow[700]),
-                const SizedBox(width: 5),
-                Text(
-                  food.rating,
-                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                Row(
+                  children: [
+                    Icon(Icons.star, color: Colors.yellow[700]),
+                    const SizedBox(width: 5),
+                    Text(
+                      food.rating,
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ],
                 ),
               ],
             ),

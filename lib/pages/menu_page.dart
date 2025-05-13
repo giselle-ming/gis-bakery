@@ -140,12 +140,38 @@ class _MenuPageState extends State<MenuPage> {
 
           const SizedBox(height: 10),
 
-          // popular items
           Expanded(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: foodMenu.length,
               itemBuilder: (context, index) => FoodTile(food: foodMenu[index]),
+            ),
+          ),
+          const SizedBox(height: 25),
+          // popular food
+          Container(
+            child: Row(
+              children: [
+                Image.asset('lib/images/cake.png', height: 60),
+
+                Column(
+                  children: [
+                    Text(
+                      "Chocolate Cake",
+                      style: GoogleFonts.dmSerifDisplay(
+                        fontSize: 20,
+                        color: const Color.fromARGB(255, 141, 0, 49),
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      "\$20",
+                      style: TextStyle(fontSize: 18, color: Colors.pink[300]),
+                    ),
+                  ],
+                ),
+                const SizedBox(width: 20),
+              ],
             ),
           ),
         ],
